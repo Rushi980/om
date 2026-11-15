@@ -1,0 +1,129 @@
+/* AssignmentPro - Modern SaaS Academic Styling */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --primary-blue: #1e3a8a;
+  --primary-accent: #2563eb;
+  --secondary-accent: #0284c7;
+  --bg-light: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Academic Document Typography */
+.font-academic {
+  font-family: 'Times New Roman', Times, 'Merriweather', serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* A4 Realistic Page Simulation for Document Preview */
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 24mm 24mm;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 850px) {
+  .a4-page {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+    margin: 10px 0;
+  }
+}
+
+/* Print Stylesheet */
+@media print {
+  body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .a4-page {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    page-break-after: always;
+  }
+}
+
+/* Glassmorphism Accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Pulsing Badge Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Editor Section Block */
+.section-card {
+  transition: all 0.2s ease-in-out;
+}
+.section-card:hover {
+  border-color: #93c5fd;
+}
+.section-card.active {
+  border-color: #2563eb;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.12);
+}
+
+/* Dotted Leader Line for Table of Contents */
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 1.5px dotted #94a3b8;
+  margin: 0 10px;
+  position: relative;
+  top: -4px;
+}
